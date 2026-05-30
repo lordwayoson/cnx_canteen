@@ -1,0 +1,99 @@
+body {
+  background-color: #f5f6fa;
+  min-height: 100vh;
+  padding-bottom: 90px;
+}
+
+<<<<<<< ours
+<<<<<<< ours
+
+  /* Fallback styling if the CDN CSS fails to load */
+.bottom-fixed-image {
+  position: fixed;
+  bottom: 0;
+  left: 1;
+}    
+
+.f-date{
+  display: flex;
+}
+
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  /* Reference the shared login background from the root img directory */
+  background: linear-gradient(180deg, rgba(13, 110, 253, 0.55), rgba(13, 110, 253, 0.55)),
+    url('../../img/canteen.jpg') center center / cover no-repeat fixed;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+<<<<<<< ours
+<<<<<<< ours
+
+@media print {
+        .no-print, #pdf-link, #report-filter, #served-chart-card, #selected-chart-card {
+          display: none;
+        }
+      }
+
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+.sidebar-layout {
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar-layout .content {
+  flex: 1;
+  padding: 1.5rem;
+}
+.queue-card {
+  font-size: 1.25rem;
+}
+.queue-card .badge {
+  font-size: 1rem;
+}
+.queue-table-card {
+  overflow-x: auto;
+}
+.queue-table-card table {
+  min-width: 720px;
+}
+.queue-table-card th,
+.queue-table-card td {
+  vertical-align: middle;
+}
+.queue-table-card td strong {
+  font-size: 1.05rem;
+}
+.status-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}
+.status-bar .badge {
+  font-size: 0.95rem;
+<<<<<<< ours
+<<<<<<< ours
+}
+=======
+}
+>>>>>>> theirs
+=======
+}
+>>>>>>> theirs

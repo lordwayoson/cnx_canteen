@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="../backend/vendor/autoload.php" colors="true">
+    <testsuites>
+        <testsuite name="API Smoke">
+            <file>ApiSmokeTest.php</file>
+        </testsuite>
+    </testsuites>
+<<<<<<< ours
+<<<<<<< ours
+</phpunit>
+=======
+</phpunit>
+>>>>>>> theirs
+=======
+</phpunit>
+>>>>>>> theirs

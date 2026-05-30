@@ -1,0 +1,26 @@
+{
+    "name": "concentrix/canteen-system",
+    "description": "Canteen management backend for Concentrix Ghana",
+    "type": "project",
+    "require": {
+        "php": "^8.2",
+        "vlucas/phpdotenv": "^5.5",
+        "tecnickcom/tcpdf": "^6.7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Canteen\\": ""
+        }
+    }
+<<<<<<< ours
+<<<<<<< ours
+}
+=======
+}
+>>>>>>> theirs
+=======
+}
+>>>>>>> theirs

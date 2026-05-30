@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: canteen_db
+      TZ: Africa/Accra
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin:5
+    restart: unless-stopped
+    environment:
+      PMA_HOST: mysql
+      UPLOAD_LIMIT: 256M
+    ports:
+      - "8080:80"
+volumes:
+<<<<<<< ours
+<<<<<<< ours
+  mysql_data:
+=======
+  mysql_data:
+>>>>>>> theirs
+=======
+  mysql_data:
+>>>>>>> theirs

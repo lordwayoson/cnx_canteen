@@ -1,0 +1,105 @@
+{
+  "info": {
+    "name": "Concentrix Canteen API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Sample requests for the Concentrix Ghana canteen system"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"{{admin_username}}\",\n  \"password\": \"{{admin_password}}\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/backend/api/auth/login.php",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "backend",
+            "api",
+            "auth",
+            "login.php"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Ingress Sync",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{base_url}}/backend/api/ingress/importUsers.php",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "backend",
+            "api",
+            "ingress",
+            "importUsers.php"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Queue Serve",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cardnumber\": \"RFID1001\",\n  \"shift_type\": \"Day\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/backend/api/queue/serve.php",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "backend",
+            "api",
+            "queue",
+            "serve.php"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost/canteen-system"
+    },
+    {
+      "key": "admin_username",
+      "value": "admin"
+    },
+    {
+      "key": "admin_password",
+      "value": "admin123!"
+    }
+  ]
+<<<<<<< ours
+<<<<<<< ours
+}
+=======
+}
+>>>>>>> theirs
+=======
+}
+>>>>>>> theirs

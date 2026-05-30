@@ -1,0 +1,25 @@
+{
+  "name": "canteen-google-sync",
+  "version": "1.0.0",
+  "description": "Google Sheets integration for Concentrix Ghana canteen system",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "preview": "node index.js --preview",
+    "import": "node index.js --import",
+    "test": "node ../tests/node/sheet.test.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "googleapis": "^131.0.0",
+    "mysql2": "^3.9.7"
+  }
+<<<<<<< ours
+<<<<<<< ours
+}
+=======
+}
+>>>>>>> theirs
+=======
+}
+>>>>>>> theirs
