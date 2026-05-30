@@ -25,7 +25,11 @@ try {
     Response::json(['success' => false, 'error' => 'Unable to load users'], 500);
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

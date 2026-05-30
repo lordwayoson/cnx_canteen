@@ -14,7 +14,10 @@ $user = \Canteen\Lib\Auth::user();
   <title>Kitchen Queue - Concentrix Canteen</title>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
   <link rel="icon" type="image/png" href="/canteen/canteen-system/frontend/img/TabIcon.png">
+=======
+>>>>>>> theirs
 =======
 >>>>>>> theirs
 =======
@@ -26,8 +29,13 @@ $user = \Canteen\Lib\Auth::user();
 <body class="queue-page" data-queue-poll="2">
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
   <div class="container-fluid py-2">
     <div class="card shadow-sm mb-3 queue-hero position-relative overflow-hidden">
+=======
+  <div class="container py-4">
+    <div class="card shadow-sm mb-4 queue-hero position-relative overflow-hidden">
+>>>>>>> theirs
 =======
   <div class="container py-4">
     <div class="card shadow-sm mb-4 queue-hero position-relative overflow-hidden">
@@ -43,7 +51,11 @@ $user = \Canteen\Lib\Auth::user();
             <h1 class="h3 mb-1">Kitchen Serving Queue</h1>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
            <span class="badge bg-primary">Logged in as <?php echo htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8'); ?></span>
+=======
+            <small class="text-muted">Auto-updating directly from the database (FIFO)</small>
+>>>>>>> theirs
 =======
             <small class="text-muted">Auto-updating directly from the database (FIFO)</small>
 >>>>>>> theirs
@@ -57,9 +69,13 @@ $user = \Canteen\Lib\Auth::user();
           <img src="img/dish2.jpg" alt="Dish" class="queue-hero-img d-none d-lg-inline-block">
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
           <img src="img/dish3.jpg" alt="Dish" class="queue-hero-img d-none d-md-inline-block">
           <img src="img/dish4.jpg" alt="Dish" class="queue-hero-img d-none d-lg-inline-block">
           <img src="img/dish5.jpg" alt="Dish" class="queue-hero-img d-none d-lg-inline-block">
+=======
+          <span class="badge bg-primary">Logged in as <?php echo htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8'); ?></span>
+>>>>>>> theirs
 =======
           <span class="badge bg-primary">Logged in as <?php echo htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8'); ?></span>
 >>>>>>> theirs
@@ -76,6 +92,10 @@ $user = \Canteen\Lib\Auth::user();
           <h5 class="mb-0">Today's Queue</h5>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
+=======
+          <small id="queue-summary" class="text-muted">Auto-updating every 2 seconds (FIFO)</small>
+>>>>>>> theirs
 =======
           <small id="queue-summary" class="text-muted">Auto-updating every 2 seconds (FIFO)</small>
 >>>>>>> theirs
@@ -144,9 +164,15 @@ $user = \Canteen\Lib\Auth::user();
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
     <!-- <div class="text-start">
       <img src="img/Pal-AfricLogo.jpg" alt="Pal-Afric Logo" class="img-fluid queue-logo-foot"> 
     </div>-->
+=======
+    <div class="text-start">
+      <img src="img/Pal-AfricLogo.jpg" alt="Pal-Afric Logo" class="img-fluid queue-logo-foot">
+    </div>
+>>>>>>> theirs
 =======
     <div class="text-start">
       <img src="img/Pal-AfricLogo.jpg" alt="Pal-Afric Logo" class="img-fluid queue-logo-foot">
@@ -164,7 +190,11 @@ $user = \Canteen\Lib\Auth::user();
 </body>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 </html>
+=======
+</html>
+>>>>>>> theirs
 =======
 </html>
 >>>>>>> theirs

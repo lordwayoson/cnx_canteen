@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS admin_user (
     role ENUM('admin','kitchen') NOT NULL DEFAULT 'kitchen',
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -18,6 +19,8 @@ CREATE TABLE IF NOT EXISTS user (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     userid INT UNSIGNED,
 =======
+=======
+>>>>>>> theirs
 =======
 >>>>>>> theirs
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -28,6 +31,9 @@ CREATE TABLE IF NOT EXISTS user (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     userid INT UNSIGNED DEFAULT NULL,
 <<<<<<< ours
+<<<<<<< ours
+>>>>>>> theirs
+=======
 >>>>>>> theirs
 =======
 >>>>>>> theirs
@@ -37,10 +43,13 @@ CREATE TABLE IF NOT EXISTS user (
     email VARCHAR(120) NULL,
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
     group_id VARCHAR(100) NULL,
     cardnumber VARCHAR(64) NULL,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 =======
+=======
+>>>>>>> theirs
 =======
 >>>>>>> theirs
     project VARCHAR(200) NULL,
@@ -48,6 +57,9 @@ CREATE TABLE IF NOT EXISTS user (
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
 <<<<<<< ours
+<<<<<<< ours
+>>>>>>> theirs
+=======
 >>>>>>> theirs
 =======
 >>>>>>> theirs
@@ -86,6 +98,10 @@ CREATE TABLE IF NOT EXISTS serving_queue (
     diet_notes VARCHAR(255) NULL,
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
+=======
+    receipt_status VARCHAR(64) NOT NULL DEFAULT 'Receipt not printed',
+>>>>>>> theirs
 =======
     receipt_status VARCHAR(64) NOT NULL DEFAULT 'Receipt not printed',
 >>>>>>> theirs
@@ -98,7 +114,11 @@ CREATE TABLE IF NOT EXISTS serving_queue (
     KEY idx_served_at (served_at)
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+=======
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+>>>>>>> theirs
 =======
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 >>>>>>> theirs

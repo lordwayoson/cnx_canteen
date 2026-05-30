@@ -145,7 +145,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 });
+=======
+});
+>>>>>>> theirs
 =======
 });
 >>>>>>> theirs

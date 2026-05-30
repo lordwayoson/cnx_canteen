@@ -7,7 +7,11 @@ ON DUPLICATE KEY UPDATE password_hash = VALUES(password_hash), role = VALUES(rol
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 INSERT INTO user (userid, username, name, lastname, email, group_id, cardnumber)
+=======
+INSERT INTO user (userid, username, name, lastname, email, project, cardnumber)
+>>>>>>> theirs
 =======
 INSERT INTO user (userid, username, name, lastname, email, project, cardnumber)
 >>>>>>> theirs
@@ -24,7 +28,11 @@ ON DUPLICATE KEY UPDATE
     email = VALUES(email),
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
     group_id = VALUES(group_id),
+=======
+    project = VALUES(project),
+>>>>>>> theirs
 =======
     project = VALUES(project),
 >>>>>>> theirs
@@ -50,7 +58,11 @@ ON DUPLICATE KEY UPDATE
     diet_notes = VALUES(diet_notes),
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
     week_start_date = VALUES(week_start_date);
+=======
+    week_start_date = VALUES(week_start_date);
+>>>>>>> theirs
 =======
     week_start_date = VALUES(week_start_date);
 >>>>>>> theirs

@@ -24,7 +24,11 @@ Response::json([
     'timestamp' => (new \DateTimeImmutable('now', new \DateTimeZone(getenv('TZ') ?: 'Africa/Accra')))->format(\DateTimeInterface::ATOM),
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 ]);
+=======
+]);
+>>>>>>> theirs
 =======
 ]);
 >>>>>>> theirs

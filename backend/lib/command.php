@@ -44,7 +44,11 @@ final class Command
     }
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

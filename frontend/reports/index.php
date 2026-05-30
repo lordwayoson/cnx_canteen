@@ -7,7 +7,10 @@ require_once __DIR__ . '/../../backend/lib/auth.php';
 $user = \Canteen\Lib\Auth::user();
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 =======
+=======
+>>>>>>> theirs
 =======
 >>>>>>> theirs
 
@@ -30,6 +33,9 @@ $basePath = rtrim($basePath, '/');
 $frontendBase = rtrim($basePath . '/frontend', '/');
 $assetBase = $frontendBase ?: ($assetBase ?: '/frontend');
 <<<<<<< ours
+<<<<<<< ours
+>>>>>>> theirs
+=======
 >>>>>>> theirs
 =======
 >>>>>>> theirs
@@ -40,6 +46,7 @@ $assetBase = $frontendBase ?: ($assetBase ?: '/frontend');
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reports - Concentrix Canteen</title>
+<<<<<<< ours
 <<<<<<< ours
 <<<<<<< ours
   <link rel="icon" type="image/png" href="/canteen/canteen-system/frontend/img/TabIcon.png">
@@ -152,6 +159,8 @@ $assetBase = $frontendBase ?: ($assetBase ?: '/frontend');
 =======
 =======
 >>>>>>> theirs
+=======
+>>>>>>> theirs
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -241,6 +250,9 @@ $assetBase = $frontendBase ?: ($assetBase ?: '/frontend');
                 <thead><tr><th>Staff</th><th>Meals</th></tr></thead>
                 <tbody><tr><td colspan="2" class="text-center">Loading...</td></tr></tbody>
 <<<<<<< ours
+<<<<<<< ours
+>>>>>>> theirs
+=======
 >>>>>>> theirs
 =======
 >>>>>>> theirs
@@ -248,6 +260,7 @@ $assetBase = $frontendBase ?: ($assetBase ?: '/frontend');
             </div>
           </div>
         </div>
+<<<<<<< ours
 <<<<<<< ours
 <<<<<<< ours
 
@@ -304,6 +317,8 @@ $assetBase = $frontendBase ?: ($assetBase ?: '/frontend');
 =======
 =======
 >>>>>>> theirs
+=======
+>>>>>>> theirs
       </div>
     </div>
   </main>
@@ -318,6 +333,9 @@ $assetBase = $frontendBase ?: ($assetBase ?: '/frontend');
 </body>
 </html>
 <<<<<<< ours
+<<<<<<< ours
+>>>>>>> theirs
+=======
 >>>>>>> theirs
 =======
 >>>>>>> theirs

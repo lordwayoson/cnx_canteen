@@ -8,9 +8,12 @@ $navUser = $user ?? Auth::user();
 ?>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
  <link rel="stylesheet" href="assets/css/custom.css">
 
 
+=======
+>>>>>>> theirs
 =======
 >>>>>>> theirs
 =======
@@ -23,9 +26,15 @@ $navUser = $user ?? Auth::user();
   <ul class="nav nav-pills flex-column mb-auto">
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
     <li class="nav-item"><a href="/canteen/canteen-system/frontend/dashboard.php" class="nav-link">Dashboard</a></li>
     <li><a href="/canteen/canteen-system/frontend/reports/index.php" class="nav-link">Reports</a></li>
     <li><a href="/canteen/canteen-system/frontend/queue.php" class="nav-link" target="_blank">Kitchen Queue</a></li>
+=======
+    <li class="nav-item"><a href="/canteen-system/frontend/dashboard.php" class="nav-link">Dashboard</a></li>
+    <li><a href="/canteen-system/frontend/reports/index.php" class="nav-link">Reports</a></li>
+    <li><a href="/canteen-system/frontend/queue.php" class="nav-link" target="_blank">Kitchen Queue</a></li>
+>>>>>>> theirs
 =======
     <li class="nav-item"><a href="/canteen-system/frontend/dashboard.php" class="nav-link">Dashboard</a></li>
     <li><a href="/canteen-system/frontend/reports/index.php" class="nav-link">Reports</a></li>
@@ -45,6 +54,7 @@ $navUser = $user ?? Auth::user();
           <ul class="nav flex-column">
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
             <li class="nav-item"><a class="nav-link" href="/canteen/canteen-system/frontend/admin/users/index.php">Users</a></li>
             <li class="nav-item"><a class="nav-link" href="/canteen/canteen-system/frontend/admin/users/create.php">Add New</a></li>
           </ul>
@@ -59,6 +69,8 @@ $navUser = $user ?? Auth::user();
 =======
 =======
 >>>>>>> theirs
+=======
+>>>>>>> theirs
             <li class="nav-item"><a class="nav-link" href="/canteen-system/frontend/admin/users/index.php">Users</a></li>
             <li class="nav-item"><a class="nav-link" href="/canteen-system/frontend/admin/users/create.php">Add New</a></li>
           </ul>
@@ -71,6 +83,9 @@ $navUser = $user ?? Auth::user();
   </div>
 </div>
 <<<<<<< ours
+<<<<<<< ours
+>>>>>>> theirs
+=======
 >>>>>>> theirs
 =======
 >>>>>>> theirs

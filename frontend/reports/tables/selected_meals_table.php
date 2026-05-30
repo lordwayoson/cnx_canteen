@@ -18,7 +18,11 @@ declare(strict_types=1);
   </div>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 </div>
+=======
+</div>
+>>>>>>> theirs
 =======
 </div>
 >>>>>>> theirs

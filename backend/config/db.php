@@ -73,7 +73,11 @@ function getCanteenPdo(): PDO
     try {
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
         $pdo = new PDO($dsn, getenv('DB_USERNAME') ?: 'root', getenv('DB_PASSWORD') ?: 'admin', [
+=======
+        $pdo = new PDO($dsn, getenv('DB_USERNAME') ?: 'root', getenv('DB_PASSWORD') ?: '', [
+>>>>>>> theirs
 =======
         $pdo = new PDO($dsn, getenv('DB_USERNAME') ?: 'root', getenv('DB_PASSWORD') ?: '', [
 >>>>>>> theirs
@@ -110,7 +114,11 @@ function getIngressPdo(): PDO
     return $pdo;
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

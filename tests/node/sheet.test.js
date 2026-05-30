@@ -31,7 +31,11 @@ assert.strictEqual(availability[2].has_user, true, 'Second known staff is availa
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 console.log('All sheet tests passed');
+=======
+console.log('All sheet tests passed');
+>>>>>>> theirs
 =======
 console.log('All sheet tests passed');
 >>>>>>> theirs

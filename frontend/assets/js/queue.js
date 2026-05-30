@@ -106,7 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
   /*function renderQueueItem(item) {
+=======
+  function renderQueueItem(item) {
+>>>>>>> theirs
 =======
   function renderQueueItem(item) {
 >>>>>>> theirs
@@ -125,7 +129,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const project = item.meal_project || item.project || '—';
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
     //const shift = isSpecial ? '—' : (item.shift_type || '—');
+=======
+    const shift = isSpecial ? '—' : (item.shift_type || '—');
+>>>>>>> theirs
 =======
     const shift = isSpecial ? '—' : (item.shift_type || '—');
 >>>>>>> theirs
@@ -141,7 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
       <td>${project}</td>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
       <td class="fw-semibold text-dark meal-cell">${mealLabel}</td>
+=======
+      <td class="fw-semibold text-primary meal-cell">${mealLabel}</td>
+>>>>>>> theirs
 =======
       <td class="fw-semibold text-primary meal-cell">${mealLabel}</td>
 >>>>>>> theirs
@@ -156,7 +168,11 @@ document.addEventListener('DOMContentLoaded', () => {
     return tr;
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
   }*/
+=======
+  }
+>>>>>>> theirs
 =======
   }
 >>>>>>> theirs
@@ -244,7 +260,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 });
+=======
+});
+>>>>>>> theirs
 =======
 });
 >>>>>>> theirs

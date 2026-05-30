@@ -7,7 +7,11 @@ This Node.js service fetches meal selections captured through Google Forms and s
 1. Copy `.env.example` from the repository root to `.env` and populate Google credentials, database connection, and timezone.
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 2. Place the Google service account JSON file at the path referenced by `GOOGLE_SERVICE_JSON`, or paste the JSON content directly into that variable.
+=======
+2. Place the Google service account JSON file in `storage/service-account.json` (the default path) or update `GOOGLE_SERVICE_JSON` to point to an absolute path, inline JSON, or a `base64:`-prefixed payload.
+>>>>>>> theirs
 =======
 2. Place the Google service account JSON file in `storage/service-account.json` (the default path) or update `GOOGLE_SERVICE_JSON` to point to an absolute path, inline JSON, or a `base64:`-prefixed payload.
 >>>>>>> theirs
@@ -44,7 +48,11 @@ This Node.js service fetches meal selections captured through Google Forms and s
 - Shift-specific meals are mapped from day (G–M) or night (N–T) columns depending on `Type of Shift`.
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 - Week start date is derived from the Monday of the submitted timestamp week to aid reporting.
+=======
+- Week start date is derived from the Monday of the submitted timestamp week to aid reporting.
+>>>>>>> theirs
 =======
 - Week start date is derived from the Monday of the submitted timestamp week to aid reporting.
 >>>>>>> theirs

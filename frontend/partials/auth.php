@@ -11,7 +11,11 @@ if (!$user) {
     exit;
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

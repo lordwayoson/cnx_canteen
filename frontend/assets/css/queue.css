@@ -15,7 +15,11 @@
   pointer-events: none;
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
   /*background-image: url('../../img/dish5.jpg'), url('../../img/dish5.jpg');*/
+=======
+  background-image: url('../../img/dish3.jpg'), url('../../img/dish4.jpg');
+>>>>>>> theirs
 =======
   background-image: url('../../img/dish3.jpg'), url('../../img/dish4.jpg');
 >>>>>>> theirs
@@ -194,7 +198,11 @@ body.no-bootstrap .queue-table thead {
   border: none;
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

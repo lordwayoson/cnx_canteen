@@ -26,7 +26,10 @@ try {
     $tz = new DateTimeZone(getenv('TZ') ?: 'Africa/Accra');
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
     $serialFilter = getenv('READER_SERIAL') ?: '3212275';
+=======
+>>>>>>> theirs
 =======
 >>>>>>> theirs
 =======
@@ -38,7 +41,11 @@ try {
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
     // Ingest new ingress.auditdata rows on each poll so the queue is sourced from live reader events.
+=======
+    // Ingest new ingress.badging rows on each poll so the queue is sourced from live reader events.
+>>>>>>> theirs
 =======
     // Ingest new ingress.badging rows on each poll so the queue is sourced from live reader events.
 >>>>>>> theirs
@@ -65,7 +72,10 @@ try {
                 $queueModel,
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
                 //$serialFilter,
+=======
+>>>>>>> theirs
 =======
 >>>>>>> theirs
 =======
@@ -96,7 +106,11 @@ try {
     Response::json(['error' => 'Queue load failed', 'detail' => $throwable->getMessage()], 500);
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

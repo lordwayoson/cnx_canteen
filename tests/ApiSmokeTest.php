@@ -16,7 +16,11 @@ final class ApiSmokeTest extends TestCase
     }
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

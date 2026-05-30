@@ -4,7 +4,11 @@ Place your Google service account JSON file in this directory. The default `.env
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 > **Security tip:** never commit real credentials to version control. Add this file to your deployment target manually.
+=======
+> **Security tip:** never commit real credentials to version control. Add this file to your deployment target manually.
+>>>>>>> theirs
 =======
 > **Security tip:** never commit real credentials to version control. Add this file to your deployment target manually.
 >>>>>>> theirs

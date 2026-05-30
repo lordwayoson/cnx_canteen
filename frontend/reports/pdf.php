@@ -199,7 +199,11 @@ function buildSections(array $data, ?string $reportType): array
     return $sections;
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

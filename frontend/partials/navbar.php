@@ -35,7 +35,11 @@ $queueUrl = $frontendBase . '/queue.php';
   </div>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 </nav>
+=======
+</nav>
+>>>>>>> theirs
 =======
 </nav>
 >>>>>>> theirs

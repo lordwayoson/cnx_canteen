@@ -44,7 +44,11 @@ try {
     Response::json(['success' => false, 'error' => 'Unable to delete user'], 500);
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

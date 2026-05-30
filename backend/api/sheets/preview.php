@@ -43,7 +43,11 @@ if (isset($data['error'])) {
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 Response::json(['rows' => $data]);
+=======
+Response::json(['rows' => $data]);
+>>>>>>> theirs
 =======
 Response::json(['rows' => $data]);
 >>>>>>> theirs

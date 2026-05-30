@@ -2,6 +2,7 @@
 declare(strict_types=1);
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 
 use Canteen\Lib\Auth;
 
@@ -15,6 +16,8 @@ if (!$user) {
 =======
 =======
 >>>>>>> theirs
+=======
+>>>>>>> theirs
 ?>
 <footer class="mt-auto py-3 bg-white border-top text-center">
   <div class="container">
@@ -22,6 +25,9 @@ if (!$user) {
   </div>
 </footer>
 <<<<<<< ours
+<<<<<<< ours
+>>>>>>> theirs
+=======
 >>>>>>> theirs
 =======
 >>>>>>> theirs

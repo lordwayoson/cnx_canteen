@@ -14,7 +14,10 @@ $user = \Canteen\Lib\Auth::user();
   <title>Dashboard - Concentrix Canteen</title>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
   <link rel="icon" type="image/png" href="/canteen/canteen-system/frontend/img/TabIcon.png">
+=======
+>>>>>>> theirs
 =======
 >>>>>>> theirs
 =======
@@ -39,7 +42,11 @@ $user = \Canteen\Lib\Auth::user();
             <h5 class="card-title">Ingress Sync</h5>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
             <!--<p class="card-text">Import staff data and RFID card numbers from the FingerTec ingress database.</p>-->
+=======
+            <p class="card-text">Import staff data and RFID card numbers from the FingerTec ingress database.</p>
+>>>>>>> theirs
 =======
             <p class="card-text">Import staff data and RFID card numbers from the FingerTec ingress database.</p>
 >>>>>>> theirs
@@ -56,7 +63,11 @@ $user = \Canteen\Lib\Auth::user();
             <h5 class="card-title">Google Sheet Intake</h5>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
             <!--p class="card-text">Preview only-new rows from the Google Form intake and confirm import.</p>-->
+=======
+            <p class="card-text">Preview only-new rows from the Google Form intake and confirm import.</p>
+>>>>>>> theirs
 =======
             <p class="card-text">Preview only-new rows from the Google Form intake and confirm import.</p>
 >>>>>>> theirs
@@ -76,7 +87,11 @@ $user = \Canteen\Lib\Auth::user();
             <h5 class="card-title">Reports</h5>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
             <!--<p class="card-text">View meal serving analytics, export to PDF, and print service summaries.</p>-->
+=======
+            <p class="card-text">View meal serving analytics, export to PDF, and print service summaries.</p>
+>>>>>>> theirs
 =======
             <p class="card-text">View meal serving analytics, export to PDF, and print service summaries.</p>
 >>>>>>> theirs
@@ -124,7 +139,11 @@ $user = \Canteen\Lib\Auth::user();
 </body>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 </html>
+=======
+</html>
+>>>>>>> theirs
 =======
 </html>
 >>>>>>> theirs

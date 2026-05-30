@@ -120,7 +120,11 @@ canteen-system/
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 This project is provided as-is for internal Concentrix Ghana deployment. Review with your legal/compliance team before production use.
+=======
+This project is provided as-is for internal Concentrix Ghana deployment. Review with your legal/compliance team before production use.
+>>>>>>> theirs
 =======
 This project is provided as-is for internal Concentrix Ghana deployment. Review with your legal/compliance team before production use.
 >>>>>>> theirs

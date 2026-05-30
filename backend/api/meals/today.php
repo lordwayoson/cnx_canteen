@@ -41,7 +41,11 @@ $meal = $mealModel->getMealForStaff((int) $user['userid'], $shiftType, $date);
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 Response::json(['user' => $user, 'meal' => $meal, 'date' => $date->format('Y-m-d')]);
+=======
+Response::json(['user' => $user, 'meal' => $meal, 'date' => $date->format('Y-m-d')]);
+>>>>>>> theirs
 =======
 Response::json(['user' => $user, 'meal' => $meal, 'date' => $date->format('Y-m-d')]);
 >>>>>>> theirs

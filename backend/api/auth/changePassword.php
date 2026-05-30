@@ -57,7 +57,11 @@ try {
     Response::json(['success' => false, 'error' => 'Unable to update password'], 500);
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

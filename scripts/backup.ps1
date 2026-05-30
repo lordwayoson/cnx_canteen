@@ -5,7 +5,11 @@ Param(
     [string]$User = "root",
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
     [string]$Password = "admin"
+=======
+    [string]$Password = ""
+>>>>>>> theirs
 =======
     [string]$Password = ""
 >>>>>>> theirs

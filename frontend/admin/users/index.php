@@ -50,7 +50,10 @@ try {
   <title>User Management</title>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
   <link rel="icon" type="image/png" href="/canteen/canteen-system/frontend/img/TabIcon.png">
+=======
+>>>>>>> theirs
 =======
 >>>>>>> theirs
 =======
@@ -165,6 +168,7 @@ try {
         <div class="modal-body">
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
          <div class="container mb-3">
             <div class="mb-3">
               <label class="form-label">User ID:</label>
@@ -201,6 +205,8 @@ try {
 =======
 =======
 >>>>>>> theirs
+=======
+>>>>>>> theirs
           <div class="mb-3">
             <label class="form-label">User ID</label>
             <input type="text" class="form-control" id="edit-id" name="id" readonly>
@@ -228,6 +234,9 @@ try {
           </div>
           <div class="form-text mt-2">Leave password fields blank to keep the current password.</div>
 <<<<<<< ours
+<<<<<<< ours
+>>>>>>> theirs
+=======
 >>>>>>> theirs
 =======
 >>>>>>> theirs
@@ -266,7 +275,11 @@ try {
 </body>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 </html>
+=======
+</html>
+>>>>>>> theirs
 =======
 </html>
 >>>>>>> theirs

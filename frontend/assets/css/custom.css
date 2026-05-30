@@ -6,6 +6,7 @@ body {
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 
   /* Fallback styling if the CDN CSS fails to load */
 .bottom-fixed-image {
@@ -18,6 +19,8 @@ body {
   display: flex;
 }
 
+=======
+>>>>>>> theirs
 =======
 >>>>>>> theirs
 =======
@@ -41,6 +44,7 @@ body {
 }
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 
 @media print {
         .no-print, #pdf-link, #report-filter, #served-chart-card, #selected-chart-card {
@@ -48,6 +52,8 @@ body {
         }
       }
 
+=======
+>>>>>>> theirs
 =======
 >>>>>>> theirs
 =======
@@ -90,7 +96,11 @@ body {
   font-size: 0.95rem;
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

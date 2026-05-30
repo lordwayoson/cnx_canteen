@@ -20,7 +20,11 @@ try {
     Response::json(['error' => 'Reader listen failed', 'detail' => $throwable->getMessage()], 500);
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

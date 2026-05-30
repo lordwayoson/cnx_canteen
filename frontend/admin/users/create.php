@@ -29,7 +29,10 @@ $flashSuccess = isset($_GET['created']) ? 'User created successfully.' : '';
   <title>Create User</title>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
   <link rel="icon" type="image/png" href="/canteen/canteen-system/frontend/img/TabIcon.png">
+=======
+>>>>>>> theirs
 =======
 >>>>>>> theirs
 =======
@@ -94,7 +97,11 @@ $flashSuccess = isset($_GET['created']) ? 'User created successfully.' : '';
 </body>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 </html>
+=======
+</html>
+>>>>>>> theirs
 =======
 </html>
 >>>>>>> theirs

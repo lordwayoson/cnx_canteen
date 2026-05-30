@@ -23,7 +23,11 @@ final class Hardware
     {
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
         $host = getenv('READER_HOST') ?: '192.168.1.30';
+=======
+        $host = getenv('READER_HOST') ?: '192.168.1.201';
+>>>>>>> theirs
 =======
         $host = getenv('READER_HOST') ?: '192.168.1.201';
 >>>>>>> theirs
@@ -117,7 +121,11 @@ final class Hardware
     }
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

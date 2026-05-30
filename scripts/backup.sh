@@ -16,7 +16,11 @@ $MYSQLDUMP_BIN --host="$HOST" --user="$USER" --password="$PASSWORD" --routines -
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 echo "Backup created at $FILENAME"
+=======
+echo "Backup created at $FILENAME"
+>>>>>>> theirs
 =======
 echo "Backup created at $FILENAME"
 >>>>>>> theirs

@@ -41,7 +41,11 @@ Auth::login([
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 Response::json(['message' => 'Login successful', 'user' => ['username' => $user['username'], 'role' => $user['role']]]);
+=======
+Response::json(['message' => 'Login successful', 'user' => ['username' => $user['username'], 'role' => $user['role']]]);
+>>>>>>> theirs
 =======
 Response::json(['message' => 'Login successful', 'user' => ['username' => $user['username'], 'role' => $user['role']]]);
 >>>>>>> theirs

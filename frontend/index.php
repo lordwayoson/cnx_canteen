@@ -69,7 +69,11 @@ if (Auth::user()) {
 </body>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 </html>
+=======
+</html>
+>>>>>>> theirs
 =======
 </html>
 >>>>>>> theirs

@@ -15,7 +15,11 @@ $frontendBase = rtrim($frontendBase, '/');
 header('Location: ' . $frontendBase . '/index.php');
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 exit;
+=======
+exit;
+>>>>>>> theirs
 =======
 exit;
 >>>>>>> theirs

@@ -52,7 +52,11 @@ $backendApiUrl = sprintf('%s://%s%s/api', $scheme, $host, $backendBase);
 <script src="<?php echo $assetBase; ?>/assets/js/charts.js"></script>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 <script src="<?php echo $assetBase; ?>/assets/js/users.js"></script>
+=======
+<script src="<?php echo $assetBase; ?>/assets/js/users.js"></script>
+>>>>>>> theirs
 =======
 <script src="<?php echo $assetBase; ?>/assets/js/users.js"></script>
 >>>>>>> theirs

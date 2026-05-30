@@ -30,8 +30,11 @@ if (!is_dir(dirname($logFile))) {
 $tz = new DateTimeZone(getenv('TZ') ?: 'Africa/Accra');
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 $serialFilter = getenv('READER_SERIAL') ?: '3212275';
 
+=======
+>>>>>>> theirs
 =======
 >>>>>>> theirs
 =======
@@ -51,7 +54,10 @@ try {
         $queueModel,
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
         $serialFilter,
+=======
+>>>>>>> theirs
 =======
 >>>>>>> theirs
 =======
@@ -83,7 +89,11 @@ try {
     Response::json(['success' => false, 'error' => $throwable->getMessage()], 500);
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

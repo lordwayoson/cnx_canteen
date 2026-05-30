@@ -47,7 +47,11 @@ $sql = <<<SQL
         u.email,
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
         COALESCE(ug.gName, u.user_group) AS project,
+=======
+        COALESCE(ug.gName, u.project) AS project,
+>>>>>>> theirs
 =======
         COALESCE(ug.gName, u.project) AS project,
 >>>>>>> theirs
@@ -61,7 +65,11 @@ $sql = <<<SQL
     WHERE ui.employeeid IS NOT NULL AND ui.employeeid <> ''
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
     GROUP BY ui.employeeid, u.username, u.name, u.lastname, u.email, ug.gName, u.user_group
+=======
+    GROUP BY ui.employeeid, u.username, u.name, u.lastname, u.email, ug.gName, u.project
+>>>>>>> theirs
 =======
     GROUP BY ui.employeeid, u.username, u.name, u.lastname, u.email, ug.gName, u.project
 >>>>>>> theirs
@@ -142,7 +150,11 @@ while ($row = $statement->fetch()) {
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 Response::json(['message' => 'Ingress users synchronized', 'count' => $imported]);
+=======
+Response::json(['message' => 'Ingress users synchronized', 'count' => $imported]);
+>>>>>>> theirs
 =======
 Response::json(['message' => 'Ingress users synchronized', 'count' => $imported]);
 >>>>>>> theirs

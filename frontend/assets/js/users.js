@@ -71,9 +71,15 @@
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
   //function disablePasswordFields() {
     // Password fields are always enabled; keep placeholder for legacy calls.
   //}
+=======
+  function disablePasswordFields() {
+    // Password fields are always enabled; keep placeholder for legacy calls.
+  }
+>>>>>>> theirs
 =======
   function disablePasswordFields() {
     // Password fields are always enabled; keep placeholder for legacy calls.
@@ -273,7 +279,11 @@
       if (roleSelect) roleSelect.value = normalizedRole;
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
       //disablePasswordFields();
+=======
+      disablePasswordFields();
+>>>>>>> theirs
 =======
       disablePasswordFields();
 >>>>>>> theirs
@@ -297,7 +307,11 @@
     if (roleSelect) roleSelect.value = (btn.dataset.role || 'kitchen').toLowerCase();
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
     //disablePasswordFields();
+=======
+    disablePasswordFields();
+>>>>>>> theirs
 =======
     disablePasswordFields();
 >>>>>>> theirs
@@ -354,7 +368,11 @@
       editModal.addEventListener('hidden.bs.modal', () => {
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
        // disablePasswordFields();
+=======
+        disablePasswordFields();
+>>>>>>> theirs
 =======
         disablePasswordFields();
 >>>>>>> theirs
@@ -401,9 +419,15 @@
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
   //function bindPasswordToggle() {
     // No-op: passwords are always enabled; kept for backward compatibility.
   //}
+=======
+  function bindPasswordToggle() {
+    // No-op: passwords are always enabled; kept for backward compatibility.
+  }
+>>>>>>> theirs
 =======
   function bindPasswordToggle() {
     // No-op: passwords are always enabled; kept for backward compatibility.
@@ -443,7 +467,11 @@
       document.getElementById('edit-role').value = (data.role || data.user_role || 'kitchen');
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
       //disablePasswordFields();
+=======
+      disablePasswordFields();
+>>>>>>> theirs
 =======
       disablePasswordFields();
 >>>>>>> theirs
@@ -489,6 +517,7 @@
     bindConfirmEditButton();
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
     //bindPasswordToggle();
     loadUserList();
   });
@@ -496,11 +525,16 @@
 =======
 =======
 >>>>>>> theirs
+=======
+>>>>>>> theirs
     bindPasswordToggle();
     loadUserList();
   });
 })();
 <<<<<<< ours
+<<<<<<< ours
+>>>>>>> theirs
+=======
 >>>>>>> theirs
 =======
 >>>>>>> theirs

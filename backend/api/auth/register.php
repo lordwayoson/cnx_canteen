@@ -100,7 +100,11 @@ try {
     Response::json(['success' => false, 'error' => 'Unable to create user'], 500);
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

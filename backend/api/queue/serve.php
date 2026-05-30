@@ -96,7 +96,11 @@ function attemptPrintTicket(string $ticketHtml): bool
     return Receipt::printTicket($plainText);
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 }
+=======
+}
+>>>>>>> theirs
 =======
 }
 >>>>>>> theirs

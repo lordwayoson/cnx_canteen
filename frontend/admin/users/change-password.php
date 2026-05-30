@@ -76,7 +76,11 @@ $backendApiAbsolute = $scheme . '://' . $host . $backendBase . '/api/auth';
 </body>
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 </html>
+=======
+</html>
+>>>>>>> theirs
 =======
 </html>
 >>>>>>> theirs

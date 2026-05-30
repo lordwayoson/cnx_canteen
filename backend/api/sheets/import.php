@@ -43,7 +43,11 @@ if (isset($data['error'])) {
 
 <<<<<<< ours
 <<<<<<< ours
+<<<<<<< ours
 Response::json(['message' => 'Import completed', 'summary' => $data]);
+=======
+Response::json(['message' => 'Import completed', 'summary' => $data]);
+>>>>>>> theirs
 =======
 Response::json(['message' => 'Import completed', 'summary' => $data]);
 >>>>>>> theirs
