@@ -1,0 +1,11 @@
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^$ frontend/index.php [L]
+  RewriteRule ^frontend/?$ frontend/index.php [L]
+  RewriteRule ^dashboard/?$ frontend/dashboard.php [L]
+  RewriteRule ^queue/?$ frontend/queue.php [L]
+  RewriteRule ^reports/?$ frontend/reports/index.php [L]
+</IfModule>

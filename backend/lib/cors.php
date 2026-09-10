@@ -19,16 +19,4 @@ final class Cors
             exit;
         }
     }
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

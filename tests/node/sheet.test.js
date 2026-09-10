@@ -29,16 +29,4 @@ assert.strictEqual(availability[0].has_user, true, 'Known staff remains importab
 assert.strictEqual(availability[1].has_user, false, 'Unknown staff should be flagged');
 assert.strictEqual(availability[2].has_user, true, 'Second known staff is available');
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 console.log('All sheet tests passed');
-=======
-console.log('All sheet tests passed');
->>>>>>> theirs
-=======
-console.log('All sheet tests passed');
->>>>>>> theirs
-=======
-console.log('All sheet tests passed');
->>>>>>> theirs

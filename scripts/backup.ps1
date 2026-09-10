@@ -3,19 +3,7 @@ Param(
     [string]$MysqlPath = "C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin\\mysqldump.exe",
     [string]$DbHost = "127.0.0.1",
     [string]$User = "root",
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-    [string]$Password = "admin"
-=======
     [string]$Password = ""
->>>>>>> theirs
-=======
-    [string]$Password = ""
->>>>>>> theirs
-=======
-    [string]$Password = ""
->>>>>>> theirs
 )
 
 if (-not (Test-Path $OutputDirectory)) {

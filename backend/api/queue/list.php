@@ -27,16 +27,4 @@ try {
     Response::json(['queue' => $items, 'date' => $date]);
 } catch (\Throwable $throwable) {
     Response::json(['error' => 'Queue load failed', 'detail' => $throwable->getMessage()], 500);
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

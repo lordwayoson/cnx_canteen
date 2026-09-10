@@ -92,11 +92,11 @@ function getWeekStartDate(timestamp) {
   return monday.toISOString().slice(0, 10);
 }
 
-function parseServiceAccountJson(contents, source) {
-  try {
-    return JSON.parse(contents);
-  } catch (error) {
-    throw new Error(`Invalid Google service account JSON (${source}): ${error.message}`);
+class CredentialSetupError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = 'CredentialSetupError';
+    this.setupError = true;
   }
 }
 
@@ -122,70 +122,33 @@ function resolveCredentialCandidates(rawValue) {
   return Array.from(candidates);
 }
 
-function findDefaultCredentialPaths() {
-  const repoRoot = path.resolve(__dirname, '..');
-  const cwd = process.cwd();
-  return [
-    path.resolve(repoRoot, 'storage', 'service-account.json'),
-    path.resolve(cwd, 'storage', 'service-account.json'),
-    path.resolve(cwd, '..', 'storage', 'service-account.json')
-  ];
-}
-
-function loadCredentialsFromPaths(paths) {
-  for (const candidate of paths) {
-    try {
-      if (fs.existsSync(candidate)) {
-        const contents = fs.readFileSync(candidate, 'utf8');
-        return parseServiceAccountJson(contents, candidate);
-      }
-    } catch (error) {
-      // Ignore filesystem errors so remaining candidates are still considered.
-    }
-  }
-  return null;
-}
-
-function getServiceAccountCredentials() {
-  const rawSetting = process.env.GOOGLE_SERVICE_JSON || '';
+function getCredentialPath() {
+  const rawSetting = process.env.GOOGLE_APPLICATION_CREDENTIALS || '';
   const trimmed = rawSetting.trim();
 
   if (!trimmed) {
-    const defaultCredentials = loadCredentialsFromPaths(findDefaultCredentialPaths());
-    if (defaultCredentials) {
-      return defaultCredentials;
-    }
-    throw new Error(
-      'GOOGLE_SERVICE_JSON is not set. Provide a path, base64 payload, inline JSON, or place credentials at storage/service-account.json.'
+    throw new CredentialSetupError(
+      'Google Sheets credentials are not configured. Set GOOGLE_APPLICATION_CREDENTIALS in .env to your local service account key path.'
     );
   }
 
-  if (trimmed.startsWith('{')) {
-    return parseServiceAccountJson(trimmed, 'inline .env value');
-  }
-
-  if (trimmed.toLowerCase().startsWith('base64:')) {
-    const base64Payload = trimmed.slice(7);
-    const decoded = Buffer.from(base64Payload, 'base64').toString('utf8');
-    return parseServiceAccountJson(decoded, 'base64-encoded GOOGLE_SERVICE_JSON');
-  }
-
   const candidates = resolveCredentialCandidates(trimmed);
-  const credentials = loadCredentialsFromPaths(candidates);
-  if (credentials) {
-    return credentials;
+  for (const candidate of candidates) {
+    if (fs.existsSync(candidate) && fs.statSync(candidate).isFile()) {
+      return candidate;
+    }
   }
 
-  throw new Error(
-    `Google service account credentials not provided. Checked locations: ${candidates.join(', ') || '(none)'}`
+  throw new CredentialSetupError(
+    'Google Sheets credential file is missing. Create a new service account key, save it locally, and point GOOGLE_APPLICATION_CREDENTIALS to that file.'
   );
 }
 
 async function authorize() {
-  const credentials = getServiceAccountCredentials();
+  const keyFile = getCredentialPath();
   const scopes = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
   const auth = new google.auth.GoogleAuth({
-    credentials,
+    keyFile,
     scopes
   });
   return auth.getClient();
@@ -400,7 +363,12 @@ async function main() {
       await connection.end();
     }
   } catch (error) {
-    console.log(JSON.stringify({ error: error.message }));
+    console.log(JSON.stringify({
+      error: error.setupError
+        ? error.message
+        : 'Google Sheets sync failed. Check the server logs for details.',
+      setupError: Boolean(error.setupError)
+    }));
   }
 }
 
@@ -425,16 +393,4 @@ const invokedDirectly = (() => {
 
 if (invokedDirectly) {
   main();
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

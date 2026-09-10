@@ -1,10 +1,14 @@
+function escapeReportCell(value) { const span = document.createElement('span'); span.textContent = value == null || value === '' ? '—' : String(value); return span.innerHTML; }
+let reportRequest = 0;
 async function loadSummary() {
+  const request = ++reportRequest;
+  const requestKey = new URLSearchParams(new FormData(document.getElementById('report-filter'))).toString();
   const startDate = document.getElementById('start_date').value;
   const endDate = document.getElementById('end_date').value;
   const shiftType = document.getElementById('shift_type').value;
   const reportType = document.getElementById('report_type')?.value || '';
   const params = buildReportParams({ startDate, endDate, shiftType, reportType });
-  updatePdfLink(params);
+
   const query = params.toString();
   const apiUrl = buildSummaryUrl(`/reports/summary.php${query ? `?${query}` : ''}`);
   const response = await fetch(apiUrl, { credentials: 'include' });
@@ -12,13 +16,14 @@ async function loadSummary() {
   try {
     payload = await response.json();
   } catch (parseError) {
-    const text = await response.text().catch(() => '');
-    throw new Error(`Invalid response (${text || 'empty body'})`);
+    throw new Error('Unable to load report. Please try again.');
   }
   if (!response.ok) {
     const detail = payload?.error || payload?.detail || 'Request failed';
     throw new Error(detail);
   }
+  if (request !== reportRequest || requestKey !== new URLSearchParams(new FormData(document.getElementById('report-filter'))).toString()) return;
+  window.reportSnapshot = { key: requestKey, context: payload.context };
   renderSummary(payload.data || { totals: [], topMeals: [], staff: [], servedMeals: [], selectedMeals: [] }, reportType);
 }
 
@@ -53,7 +58,7 @@ function renderSummary(data, reportType = '') {
   (data.totals || []).forEach((row) => {
     if (!totalsTableBody) return;
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${row.date}</td><td>${row.total}</td>`;
+    tr.innerHTML = `<td>${escapeReportCell(row.date)}</td><td>${escapeReportCell(row.total)}</td>`;
     totalsTableBody.appendChild(tr);
   });
   if (totalsTableBody && !totalsTableBody.children.length) {
@@ -63,7 +68,7 @@ function renderSummary(data, reportType = '') {
   (data.topMeals || []).forEach((row) => {
     if (!mealsTableBody) return;
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${row.meal_label}</td><td>${row.count}</td>`;
+    tr.innerHTML = `<td>${escapeReportCell(row.meal_label)}</td><td>${escapeReportCell(row.count)}</td>`;
     mealsTableBody.appendChild(tr);
   });
   if (mealsTableBody && !mealsTableBody.children.length) {
@@ -73,7 +78,7 @@ function renderSummary(data, reportType = '') {
   (data.staff || []).forEach((row) => {
     if (!staffTableBody) return;
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${row.name} ${row.lastname}</td><td>${row.count}</td>`;
+    tr.innerHTML = `<td>${escapeReportCell(row.name)} ${escapeReportCell(row.lastname)}</td><td>${escapeReportCell(row.count)}</td>`;
     staffTableBody.appendChild(tr);
   });
   if (staffTableBody && !staffTableBody.children.length) {
@@ -96,7 +101,7 @@ function renderSummary(data, reportType = '') {
     } else {
       data.servedMeals.forEach((row) => {
         const tr = document.createElement('tr');
-        tr.innerHTML = `<td>${row.date}</td><td>${row.meal_label}</td><td>${row.count}</td>`;
+        tr.innerHTML = `<td>${escapeReportCell(row.date)}</td><td>${escapeReportCell(row.meal_label)}</td><td>${escapeReportCell(row.count)}</td>`;
         servedMealsTableBody.appendChild(tr);
       });
     }
@@ -108,7 +113,7 @@ function renderSummary(data, reportType = '') {
     } else {
       data.selectedMeals.forEach((row) => {
         const tr = document.createElement('tr');
-        tr.innerHTML = `<td>${row.date}</td><td>${row.meal_label}</td><td>${row.count}</td>`;
+        tr.innerHTML = `<td>${escapeReportCell(row.date)}</td><td>${escapeReportCell(row.meal_label)}</td><td>${escapeReportCell(row.count)}</td>`;
         selectedMealsTableBody.appendChild(tr);
       });
     }
@@ -208,24 +213,6 @@ function buildReportParams({ startDate = '', endDate = '', shiftType = '', repor
   return params;
 }
 
-function updatePdfLink(params) {
-  const pdfForm = document.getElementById('pdf-form');
-  if (pdfForm) {
-    const startInput = document.getElementById('pdf_start_date');
-    const endInput = document.getElementById('pdf_end_date');
-    const shiftInput = document.getElementById('pdf_shift_type');
-    const typeInput = document.getElementById('pdf_report_type');
-    startInput.value = params.get('start_date') || '';
-    endInput.value = params.get('end_date') || '';
-    shiftInput.value = params.get('shift_type') || '';
-    typeInput.value = params.get('report_type') || '';
-  }
-  const pdfLink = document.getElementById('pdf-link');
-  if (pdfLink) {
-    const query = params?.toString();
-    pdfLink.href = `pdf.php${query ? `?${query}` : ''}`;
-  }
-}
 
 function getMealColor(mealLabel) {
   if (colorMap.has(mealLabel)) return colorMap.get(mealLabel);
@@ -261,7 +248,7 @@ function buildStackedChartData(entries) {
 const chartInstances = {};
 function renderStackedChart(canvasId, chartData, title, tooltipSuffix) {
   const ctx = document.getElementById(canvasId);
-  if (!ctx) return;
+  if (!ctx || typeof Chart === 'undefined') return;
 
   if (chartInstances[canvasId]) {
     chartInstances[canvasId].destroy();
@@ -309,22 +296,13 @@ function renderStackedChart(canvasId, chartData, title, tooltipSuffix) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const filterForm = document.getElementById('report-filter');
-  const bindPdfUpdater = () => {
-    const params = buildReportParams({
-      startDate: document.getElementById('start_date').value,
-      endDate: document.getElementById('end_date').value,
-      shiftType: document.getElementById('shift_type').value,
-      reportType: document.getElementById('report_type')?.value || '',
-    });
-    updatePdfLink(params);
-  };
+
 
   if (filterForm) {
+    const initial = new URLSearchParams(location.search);
+    ['start_date', 'end_date', 'shift_type', 'report_type'].forEach(id => { if (initial.has(id)) document.getElementById(id).value = initial.get(id); });
     filterForm.addEventListener('submit', async (event) => {
-      if (event.submitter && event.submitter.id === 'pdf-button') {
-        // Let the browser submit the form to pdf.php with current filters.
-        return;
-      }
+      if (['print-button', 'pdf-button'].includes(event.submitter?.id)) return;
       event.preventDefault();
       try {
         await loadSummary();
@@ -333,25 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert(`Failed to load summary: ${error.message}`);
       }
     });
-    ['start_date', 'end_date', 'shift_type', 'report_type'].forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.addEventListener('change', bindPdfUpdater);
-      }
-    });
-    bindPdfUpdater();
-    loadSummary().catch((error) => console.error(error));
+
+    loadSummary().catch((error) => { console.error(error); const status = document.getElementById('report-status'); if (status) status.textContent = error.message; });
   }
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 });
-=======
-});
->>>>>>> theirs
-=======
-});
->>>>>>> theirs
-=======
-});
->>>>>>> theirs

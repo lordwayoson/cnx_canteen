@@ -75,16 +75,4 @@ try {
     Response::json($payload);
 } catch (Throwable $throwable) {
     Response::json(['success' => false, 'error' => $throwable->getMessage()], 500);
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

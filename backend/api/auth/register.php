@@ -36,18 +36,11 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower((string) $_SERVER['HT
     $isJsonRequest = true;
 }
 
-$redirectBase = (function (): string {
-    $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
-    $backendPos = strpos($scriptName, '/backend');
-    $base = $backendPos !== false ? substr($scriptName, 0, $backendPos) : '';
-    return rtrim($base, '/');
-})();
-
-$validationError = function (string $message) use ($isJsonRequest, $redirectBase) {
+$validationError = function (string $message) use ($isJsonRequest) {
     if ($isJsonRequest) {
         Response::json(['success' => false, 'error' => $message], 422);
     } else {
-        header('Location: ' . $redirectBase . '/frontend/admin/users/create.php?error=' . urlencode($message));
+        header('Location: ' . Config\frontendUrl('admin/users/create.php') . '?error=' . urlencode($message));
     }
     exit;
 };
@@ -72,7 +65,7 @@ try {
         if ($isJsonRequest) {
             Response::json(['success' => false, 'error' => 'Username already exists'], 409);
         } else {
-            header('Location: ' . $redirectBase . '/frontend/admin/users/create.php?error=' . urlencode('Username already exists'));
+            header('Location: ' . Config\frontendUrl('admin/users/create.php') . '?error=' . urlencode('Username already exists'));
         }
         exit;
     }
@@ -80,12 +73,8 @@ try {
     $hash = password_hash($password, PASSWORD_DEFAULT);
     $userId = $userModel->createAdminUser($username, $hash, $role);
 
-    // If this was a traditional form post (non-AJAX), redirect back to the
-    // user list to avoid dumping raw JSON in the browser. Compute the base
-    // path relative to "/backend" so installs under nested folders (e.g.,
-    // /canteen/canteen-system) resolve correctly.
     if (!$isJsonRequest) {
-        $location = $redirectBase . '/frontend/admin/users/index.php?created=1';
+        $location = Config\frontendUrl('admin/users/index.php') . '?created=1';
         header('Location: ' . $location);
         exit;
     }
@@ -98,16 +87,4 @@ try {
     ]);
 } catch (Throwable $e) {
     Response::json(['success' => false, 'error' => 'Unable to create user'], 500);
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

@@ -14,16 +14,4 @@ final class ApiSmokeTest extends TestCase
     {
         $this->assertFileExists(__DIR__ . '/../backend/api/queue/serve.php');
     }
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

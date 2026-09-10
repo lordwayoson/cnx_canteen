@@ -16,16 +16,4 @@ declare(strict_types=1);
       </table>
     </div>
   </div>
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 </div>
-=======
-</div>
->>>>>>> theirs
-=======
-</div>
->>>>>>> theirs
-=======
-</div>
->>>>>>> theirs

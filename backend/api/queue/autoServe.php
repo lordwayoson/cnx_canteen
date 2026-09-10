@@ -47,16 +47,4 @@ try {
         $canteenPdo->rollBack();
     }
     Response::json(['success' => false, 'error' => $throwable->getMessage()], 500);
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

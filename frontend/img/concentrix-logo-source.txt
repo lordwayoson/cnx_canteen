@@ -1,0 +1,8 @@
+Concentrix report logo
+
+Source: https://www.concentrix.com/wp-content/uploads/2026/04/concentrix_logo-1.webp
+Retrieved from the official company website on 2026-09-10.
+The white wordmark is packaged as an opaque PNG against its dark brand background for TCPDF compatibility without GD. Aspect ratio and lettering are preserved.
+Concentrix and its logo are trademarks of Concentrix Corporation. This asset identifies the company in its internal canteen reports.
+
+Override REPORT_COMPANY_LOGO in .env with a frontend-relative PNG/JPEG path to use a different approved local logo. Missing/unreadable files fall back to company text.

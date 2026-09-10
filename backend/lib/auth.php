@@ -3,6 +3,10 @@ declare(strict_types=1);
 
 namespace Canteen\Lib;
 
+require_once __DIR__ . '/../../config/app.php';
+
+\Canteen\Config\loadEnv();
+
 class Auth
 {
     private static bool $bootstrapped = false;
@@ -71,16 +75,4 @@ class Auth
     {
         self::requireLogin([$role]);
     }
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

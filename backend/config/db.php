@@ -8,6 +8,10 @@ use PDO;
 use PDOException;
 use RuntimeException;
 
+require_once dirname(__DIR__, 2) . '/config/app.php';
+
+loadEnv();
+
 /**
  * Attempt to load Composer's autoloader if available. We support both the
  * backend/ vendor directory (expected when running `composer install` from the
@@ -71,19 +75,7 @@ function getCanteenPdo(): PDO
     }
     $dsn = sprintf('mysql:host=%s;port=%s;dbname=%s;charset=utf8mb4', getenv('DB_HOST') ?: '127.0.0.1', getenv('DB_PORT') ?: '3306', getenv('DB_DATABASE') ?: 'canteen_db');
     try {
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-        $pdo = new PDO($dsn, getenv('DB_USERNAME') ?: 'root', getenv('DB_PASSWORD') ?: 'admin', [
-=======
         $pdo = new PDO($dsn, getenv('DB_USERNAME') ?: 'root', getenv('DB_PASSWORD') ?: '', [
->>>>>>> theirs
-=======
-        $pdo = new PDO($dsn, getenv('DB_USERNAME') ?: 'root', getenv('DB_PASSWORD') ?: '', [
->>>>>>> theirs
-=======
-        $pdo = new PDO($dsn, getenv('DB_USERNAME') ?: 'root', getenv('DB_PASSWORD') ?: '', [
->>>>>>> theirs
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         ]);
@@ -112,16 +104,4 @@ function getIngressPdo(): PDO
         throw new RuntimeException('Ingress database connection failed: ' . $exception->getMessage());
     }
     return $pdo;
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

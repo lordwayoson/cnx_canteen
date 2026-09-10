@@ -45,37 +45,13 @@ $sql = <<<SQL
         u.name,
         u.lastname,
         u.email,
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-        COALESCE(ug.gName, u.user_group) AS project,
-=======
-        COALESCE(ug.gName, u.project) AS project,
->>>>>>> theirs
-=======
-        COALESCE(ug.gName, u.project) AS project,
->>>>>>> theirs
-=======
-        COALESCE(ug.gName, u.project) AS project,
->>>>>>> theirs
+        ug.gName AS project,
         MAX(ui.cardnumber) AS cardnumber
     FROM `user_info` AS ui
     INNER JOIN `user` AS u ON u.userid = ui.userid
     LEFT JOIN `user_group` AS ug ON u.user_group = ug.id
     WHERE ui.employeeid IS NOT NULL AND ui.employeeid <> ''
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-    GROUP BY ui.employeeid, u.username, u.name, u.lastname, u.email, ug.gName, u.user_group
-=======
-    GROUP BY ui.employeeid, u.username, u.name, u.lastname, u.email, ug.gName, u.project
->>>>>>> theirs
-=======
-    GROUP BY ui.employeeid, u.username, u.name, u.lastname, u.email, ug.gName, u.project
->>>>>>> theirs
-=======
-    GROUP BY ui.employeeid, u.username, u.name, u.lastname, u.email, ug.gName, u.project
->>>>>>> theirs
+    GROUP BY ui.employeeid, u.username, u.name, u.lastname, u.email, ug.gName
     ORDER BY ui.employeeid
 SQL;
 
@@ -148,16 +124,4 @@ while ($row = $statement->fetch()) {
     $imported++;
 }
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 Response::json(['message' => 'Ingress users synchronized', 'count' => $imported]);
-=======
-Response::json(['message' => 'Ingress users synchronized', 'count' => $imported]);
->>>>>>> theirs
-=======
-Response::json(['message' => 'Ingress users synchronized', 'count' => $imported]);
->>>>>>> theirs
-=======
-Response::json(['message' => 'Ingress users synchronized', 'count' => $imported]);
->>>>>>> theirs

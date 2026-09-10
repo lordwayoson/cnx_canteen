@@ -20,16 +20,4 @@ services:
     ports:
       - "8080:80"
 volumes:
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
   mysql_data:
-=======
-  mysql_data:
->>>>>>> theirs
-=======
-  mysql_data:
->>>>>>> theirs
-=======
-  mysql_data:
->>>>>>> theirs

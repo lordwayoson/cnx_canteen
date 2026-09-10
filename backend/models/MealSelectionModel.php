@@ -190,16 +190,4 @@ final class MealSelectionModel
             'selectedMeals' => $selectedMeals,
         ];
     }
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

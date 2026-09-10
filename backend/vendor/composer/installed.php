@@ -3,7 +3,7 @@
         'name' => 'concentrix/canteen-system',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'af2ae48a46a354ed000a4ec62d782f1e24e47f74',
+        'reference' => '41766c6a0d6e7618e82e75d4889d84b0acdb5f80',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'concentrix/canteen-system' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'af2ae48a46a354ed000a4ec62d782f1e24e47f74',
+            'reference' => '41766c6a0d6e7618e82e75d4889d84b0acdb5f80',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

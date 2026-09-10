@@ -37,20 +37,12 @@ if ($data === null) {
 }
 
 if (isset($data['error'])) {
-    Response::json(['error' => 'Import failed', 'details' => $data['error']], 500);
+    $isSetupError = !empty($data['setupError']);
+    Response::json([
+        'error' => $isSetupError ? 'Google Sheets is not configured yet' : 'Import failed',
+        'details' => $data['error'],
+    ], $isSetupError ? 503 : 500);
     exit;
 }
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 Response::json(['message' => 'Import completed', 'summary' => $data]);
-=======
-Response::json(['message' => 'Import completed', 'summary' => $data]);
->>>>>>> theirs
-=======
-Response::json(['message' => 'Import completed', 'summary' => $data]);
->>>>>>> theirs
-=======
-Response::json(['message' => 'Import completed', 'summary' => $data]);
->>>>>>> theirs

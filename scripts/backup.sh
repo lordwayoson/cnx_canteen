@@ -14,16 +14,4 @@ FILENAME="$OUTPUT_DIR/${DATABASE}-${TIMESTAMP}.sql"
 
 $MYSQLDUMP_BIN --host="$HOST" --user="$USER" --password="$PASSWORD" --routines --events --single-transaction "$DATABASE" > "$FILENAME"
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 echo "Backup created at $FILENAME"
-=======
-echo "Backup created at $FILENAME"
->>>>>>> theirs
-=======
-echo "Backup created at $FILENAME"
->>>>>>> theirs
-=======
-echo "Backup created at $FILENAME"
->>>>>>> theirs

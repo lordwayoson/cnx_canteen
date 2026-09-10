@@ -25,16 +25,4 @@ final class Receipt
         fclose($socket);
         return $written !== false;
     }
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

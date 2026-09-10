@@ -1,13 +1,10 @@
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-Local vendor directory reserved for Bootstrap 5, DataTables, and Chart.js assets. The project references CDN builds for ease of updates; place offline copies here if deploying in an isolated environment.
-=======
-Local vendor directory reserved for Bootstrap 5, DataTables, and Chart.js assets. The project references CDN builds for ease of updates; place offline copies here if deploying in an isolated environment.
->>>>>>> theirs
-=======
-Local vendor directory reserved for Bootstrap 5, DataTables, and Chart.js assets. The project references CDN builds for ease of updates; place offline copies here if deploying in an isolated environment.
->>>>>>> theirs
-=======
-Local vendor directory reserved for Bootstrap 5, DataTables, and Chart.js assets. The project references CDN builds for ease of updates; place offline copies here if deploying in an isolated environment.
->>>>>>> theirs
+Reports use locally packaged assets and require no CDN access:
+
+- bootstrap.min.css: Bootstrap 5.3.3, MIT
+  https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+- bootstrap.bundle.min.js: Bootstrap 5.3.3, MIT
+  https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
+- chart.umd.min.js: Chart.js 4.4.3, MIT
+  https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js
+
+Original license banners are retained. These versions match the application's existing CDN versions. Other application pages retain their existing asset loading. Reports do not initialize DataTables and therefore do not load its unused assets.

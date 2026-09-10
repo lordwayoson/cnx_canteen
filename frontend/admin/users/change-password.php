@@ -2,11 +2,12 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/../../partials/auth.php';
+require_once __DIR__ . '/../../../config/app.php';
 require_once __DIR__ . '/../../../backend/lib/auth.php';
 
 $user = \Canteen\Lib\Auth::user();
 if (($user['role'] ?? '') !== 'admin') {
-    header('Location: /canteen-system/frontend/dashboard.php');
+    header('Location: ' . \Canteen\Config\frontendUrl('dashboard.php'));
     exit;
 }
 
@@ -16,13 +17,8 @@ if ($userId <= 0) {
     exit;
 }
 
-$scriptPath = $_SERVER['SCRIPT_NAME'] ?? '';
-$frontendPos = strpos($scriptPath, '/frontend');
-$basePath = $frontendPos !== false ? substr($scriptPath, 0, $frontendPos) : '';
-$backendBase = rtrim($basePath . '/backend', '/');
-$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
-$backendApiAbsolute = $scheme . '://' . $host . $backendBase . '/api/auth';
+$backendApiPath = \Canteen\Config\apiUrl('auth');
+$backendApiAbsolute = \Canteen\Config\absoluteUrl($backendApiPath);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,16 +27,16 @@ $backendApiAbsolute = $scheme . '://' . $host . $backendBase . '/api/auth';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Change Password</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../assets/css/custom.css">
+  <link rel="stylesheet" href="<?php echo \Canteen\Config\h(\Canteen\Config\assetUrl('assets/css/custom.css')); ?>">
 </head>
-<body data-auth-base="<?php echo $backendBase; ?>/api/auth" data-auth-base-abs="<?php echo $backendApiAbsolute; ?>">
+<body data-auth-base="<?php echo \Canteen\Config\h($backendApiPath); ?>" data-auth-base-abs="<?php echo \Canteen\Config\h($backendApiAbsolute); ?>">
 <?php require __DIR__ . '/../../partials/navbar.php'; ?>
 <div class="sidebar-layout">
   <?php require __DIR__ . '/../../partials/sidebar.php'; ?>
   <main class="content">
     <script>
       // Explicit auth API base for password changes.
-      window.AUTH_API_BASE = '<?php echo $backendApiAbsolute; ?>';
+      window.AUTH_API_BASE = <?php echo json_encode($backendApiAbsolute); ?>;
     </script>
     <div class="d-flex justify-content-between align-items-center mb-3">
       <div>
@@ -74,16 +70,4 @@ $backendApiAbsolute = $scheme . '://' . $host . $backendBase . '/api/auth';
 </div>
 <?php require __DIR__ . '/../../partials/scripts.php'; ?>
 </body>
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 </html>
-=======
-</html>
->>>>>>> theirs
-=======
-</html>
->>>>>>> theirs
-=======
-</html>
->>>>>>> theirs

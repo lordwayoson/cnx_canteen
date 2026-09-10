@@ -13,19 +13,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
   /*background-image: url('../../img/dish5.jpg'), url('../../img/dish5.jpg');*/
-=======
-  background-image: url('../../img/dish3.jpg'), url('../../img/dish4.jpg');
->>>>>>> theirs
-=======
-  background-image: url('../../img/dish3.jpg'), url('../../img/dish4.jpg');
->>>>>>> theirs
-=======
-  background-image: url('../../img/dish3.jpg'), url('../../img/dish4.jpg');
->>>>>>> theirs
   background-repeat: no-repeat;
   background-size: 160px auto, 120px auto;
   background-position: calc(100% - 32px) 12px, 18px calc(100% - 28px);
@@ -196,16 +184,4 @@ body.no-bootstrap .queue-table thead {
 .queue-search-toast .card-body {
   background-color: transparent;
   border: none;
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

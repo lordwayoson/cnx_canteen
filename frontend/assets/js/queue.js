@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function apiPath(path) {
-    return path.startsWith('http') ? path : `../backend/api${path}`;
+    if (path.startsWith('http')) return path;
+    const base = window.CANTEEN_BACKEND_API_URL || window.CANTEEN_BACKEND_API_BASE || '../backend/api';
+    return `${String(base).replace(/\/$/, '')}${path.startsWith('/') ? path : `/${path}`}`;
   }
 
   async function safeJson(response) {
@@ -104,81 +106,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-  /*function renderQueueItem(item) {
-=======
   function renderQueueItem(item) {
->>>>>>> theirs
-=======
-  function renderQueueItem(item) {
->>>>>>> theirs
-=======
-  function renderQueueItem(item) {
->>>>>>> theirs
     const projectName = (item.project || '').toLowerCase();
     const isSpecial = projectName === 'reserved' || projectName === 'temporal';
     const fullName = isSpecial ? (item.project || 'Reserved/Temporal') : ([item.name, item.lastname].filter(Boolean).join(' ') || 'Unknown');
-    const mealLabel = isSpecial ? '—' : (item.meal_label ? `${item.meal_label}` : 'N/A');
+    const mealLabel = isSpecial ? '-' : (item.meal_label ? `${item.meal_label}` : 'N/A');
     const servedAt = item.served_at ? new Date(item.served_at).toLocaleString() : '';
     const receiptClass = item.receipt_status && item.receipt_status.toLowerCase().includes('not')
       ? 'bg-warning text-dark'
       : 'bg-success';
-    const diet = isSpecial ? '—' : (item.diet_notes ? item.diet_notes : 'None');
-    const project = item.meal_project || item.project || '—';
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-    //const shift = isSpecial ? '—' : (item.shift_type || '—');
-=======
-    const shift = isSpecial ? '—' : (item.shift_type || '—');
->>>>>>> theirs
-=======
-    const shift = isSpecial ? '—' : (item.shift_type || '—');
->>>>>>> theirs
-=======
-    const shift = isSpecial ? '—' : (item.shift_type || '—');
->>>>>>> theirs
+    const diet = isSpecial ? '-' : (item.diet_notes ? item.diet_notes : 'None');
+    const project = item.meal_project || item.project || '-';
+    const shift = isSpecial ? '-' : (item.shift_type || '-');
 
     const tr = document.createElement('tr');
     tr.classList.add('queue-row');
     tr.innerHTML = `
       <td class="fw-semibold">${fullName}</td>
-      <td>${isSpecial ? '—' : (item.staff_id || '—')}</td>
+      <td>${isSpecial ? '-' : (item.staff_id || '-')}</td>
       <td>${project}</td>
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
       <td class="fw-semibold text-dark meal-cell">${mealLabel}</td>
-=======
-      <td class="fw-semibold text-primary meal-cell">${mealLabel}</td>
->>>>>>> theirs
-=======
-      <td class="fw-semibold text-primary meal-cell">${mealLabel}</td>
->>>>>>> theirs
-=======
-      <td class="fw-semibold text-primary meal-cell">${mealLabel}</td>
->>>>>>> theirs
       <td>${diet}</td>
       <td>${shift}</td>
-      <td>${servedAt || '—'}</td>
-      <td><span class="badge ${receiptClass}">${item.receipt_status || '—'}</span></td>
+      <td>${servedAt || '-'}</td>
+      <td><span class="badge ${receiptClass}">${item.receipt_status || '-'}</span></td>
     `;
     return tr;
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-  }*/
-=======
   }
->>>>>>> theirs
-=======
-  }
->>>>>>> theirs
-=======
-  }
->>>>>>> theirs
 
   function trimQueueRows() {
     if (!queueItems) return;
@@ -258,16 +212,4 @@ document.addEventListener('DOMContentLoaded', () => {
       searchPanel.classList.remove('show');
     });
   }
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 });
-=======
-});
->>>>>>> theirs
-=======
-});
->>>>>>> theirs
-=======
-});
->>>>>>> theirs

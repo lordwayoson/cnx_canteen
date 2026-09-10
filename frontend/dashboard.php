@@ -2,9 +2,11 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/partials/auth.php';
+require_once __DIR__ . '/../config/app.php';
 require_once __DIR__ . '/../backend/lib/auth.php';
 
 $user = \Canteen\Lib\Auth::user();
+$reportsUrl = \Canteen\Config\frontendUrl('reports/index.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,19 +14,10 @@ $user = \Canteen\Lib\Auth::user();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dashboard - Concentrix Canteen</title>
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-  <link rel="icon" type="image/png" href="/canteen/canteen-system/frontend/img/TabIcon.png">
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
+  <link rel="icon" type="image/png" href="<?php echo \Canteen\Config\h(\Canteen\Config\assetUrl('img/TabIcon.png')); ?>">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdn.datatables.net/v/bs5/dt-1.13.8/b-2.4.2/r-2.5.0/datatables.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="<?php echo \Canteen\Config\h(\Canteen\Config\assetUrl('assets/css/custom.css')); ?>">
 </head>
 <body>
 <?php require __DIR__ . '/partials/navbar.php'; ?>
@@ -40,19 +33,7 @@ $user = \Canteen\Lib\Auth::user();
         <div class="card border-0 shadow-sm h-100">
           <div class="card-body">
             <h5 class="card-title">Ingress Sync</h5>
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
             <!--<p class="card-text">Import staff data and RFID card numbers from the FingerTec ingress database.</p>-->
-=======
-            <p class="card-text">Import staff data and RFID card numbers from the FingerTec ingress database.</p>
->>>>>>> theirs
-=======
-            <p class="card-text">Import staff data and RFID card numbers from the FingerTec ingress database.</p>
->>>>>>> theirs
-=======
-            <p class="card-text">Import staff data and RFID card numbers from the FingerTec ingress database.</p>
->>>>>>> theirs
             <button class="btn btn-outline-primary" id="ingress-sync" <?php echo $user['role'] === 'kitchen' ? 'disabled' : ''; ?>>Ingress Sync</button>
           </div>
         </div>
@@ -61,19 +42,7 @@ $user = \Canteen\Lib\Auth::user();
         <div class="card border-0 shadow-sm h-100">
           <div class="card-body">
             <h5 class="card-title">Google Sheet Intake</h5>
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
             <!--p class="card-text">Preview only-new rows from the Google Form intake and confirm import.</p>-->
-=======
-            <p class="card-text">Preview only-new rows from the Google Form intake and confirm import.</p>
->>>>>>> theirs
-=======
-            <p class="card-text">Preview only-new rows from the Google Form intake and confirm import.</p>
->>>>>>> theirs
-=======
-            <p class="card-text">Preview only-new rows from the Google Form intake and confirm import.</p>
->>>>>>> theirs
             <div class="d-grid gap-2">
               <button class="btn btn-outline-secondary" id="preview-btn" <?php echo $user['role'] === 'kitchen' ? 'disabled' : ''; ?>>Preview New Rows</button>
               <button class="btn btn-success" id="import-btn" <?php echo $user['role'] === 'kitchen' ? 'disabled' : ''; ?>>Confirm Import</button>
@@ -85,20 +54,8 @@ $user = \Canteen\Lib\Auth::user();
         <div class="card border-0 shadow-sm h-100">
           <div class="card-body">
             <h5 class="card-title">Reports</h5>
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
             <!--<p class="card-text">View meal serving analytics, export to PDF, and print service summaries.</p>-->
-=======
-            <p class="card-text">View meal serving analytics, export to PDF, and print service summaries.</p>
->>>>>>> theirs
-=======
-            <p class="card-text">View meal serving analytics, export to PDF, and print service summaries.</p>
->>>>>>> theirs
-=======
-            <p class="card-text">View meal serving analytics, export to PDF, and print service summaries.</p>
->>>>>>> theirs
-            <a class="btn btn-outline-dark" href="reports/index.php">Open Reports</a>
+            <a class="btn btn-outline-dark" href="<?php echo \Canteen\Config\h($reportsUrl); ?>">Open Reports</a>
           </div>
         </div>
       </div>
@@ -135,18 +92,5 @@ $user = \Canteen\Lib\Auth::user();
 </div>
 
 <?php require __DIR__ . '/partials/scripts.php'; ?>
-<script src="assets/js/queue.js" defer></script>
 </body>
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 </html>
-=======
-</html>
->>>>>>> theirs
-=======
-</html>
->>>>>>> theirs
-=======
-</html>
->>>>>>> theirs

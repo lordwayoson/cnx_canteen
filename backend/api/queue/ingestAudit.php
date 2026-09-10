@@ -28,17 +28,8 @@ if (!is_dir(dirname($logFile))) {
 }
 
 $tz = new DateTimeZone(getenv('TZ') ?: 'Africa/Accra');
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 $serialFilter = getenv('READER_SERIAL') ?: '3212275';
 
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
 try {
     $canteenPdo = Config\getCanteenPdo();
     $ingressPdo = Config\getIngressPdo();
@@ -52,16 +43,7 @@ try {
         $userModel,
         $mealModel,
         $queueModel,
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
         $serialFilter,
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
         $tz
     );
 
@@ -87,16 +69,4 @@ try {
         FILE_APPEND
     );
     Response::json(['success' => false, 'error' => $throwable->getMessage()], 500);
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

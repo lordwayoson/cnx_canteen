@@ -22,8 +22,6 @@
     if (window.CANTEEN_BACKEND_BASE) {
       candidates.push(`${window.location.origin}${window.CANTEEN_BACKEND_BASE.replace(/\/$/, '')}/api/auth`);
     }
-    // Common defaults for local installs
-    candidates.push(`${window.location.origin}/canteen-system/backend/api/auth`);
     candidates.push(`${window.location.origin}/backend/api/auth`);
     candidates.push('/backend/api/auth');
     const winner = candidates.find((c) => typeof c === 'string' && c.length > 0);
@@ -69,27 +67,9 @@
   let currentEditUserId = null;
   let currentDeleteUserId = null;
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
   //function disablePasswordFields() {
     // Password fields are always enabled; keep placeholder for legacy calls.
   //}
-=======
-  function disablePasswordFields() {
-    // Password fields are always enabled; keep placeholder for legacy calls.
-  }
->>>>>>> theirs
-=======
-  function disablePasswordFields() {
-    // Password fields are always enabled; keep placeholder for legacy calls.
-  }
->>>>>>> theirs
-=======
-  function disablePasswordFields() {
-    // Password fields are always enabled; keep placeholder for legacy calls.
-  }
->>>>>>> theirs
 
   function renderUsers(users) {
     const tbody = document.querySelector('#user-table tbody');
@@ -277,19 +257,7 @@
       if (display) display.textContent = data.username || '';
       const normalizedRole = (data.role || data.user_role || 'kitchen').toLowerCase();
       if (roleSelect) roleSelect.value = normalizedRole;
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
       //disablePasswordFields();
-=======
-      disablePasswordFields();
->>>>>>> theirs
-=======
-      disablePasswordFields();
->>>>>>> theirs
-=======
-      disablePasswordFields();
->>>>>>> theirs
     } catch (error) {
       alert(error.message || 'Failed to load user');
     }
@@ -305,19 +273,7 @@
     if (display) display.textContent = btn.dataset.username || '';
     const roleSelect = document.getElementById('edit-role');
     if (roleSelect) roleSelect.value = (btn.dataset.role || 'kitchen').toLowerCase();
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
     //disablePasswordFields();
-=======
-    disablePasswordFields();
->>>>>>> theirs
-=======
-    disablePasswordFields();
->>>>>>> theirs
-=======
-    disablePasswordFields();
->>>>>>> theirs
     hydrateEditUser(id);
   }
 
@@ -366,19 +322,7 @@
         }
       });
       editModal.addEventListener('hidden.bs.modal', () => {
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
        // disablePasswordFields();
-=======
-        disablePasswordFields();
->>>>>>> theirs
-=======
-        disablePasswordFields();
->>>>>>> theirs
-=======
-        disablePasswordFields();
->>>>>>> theirs
       });
     }
 
@@ -417,27 +361,9 @@
     });
   }
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
   //function bindPasswordToggle() {
     // No-op: passwords are always enabled; kept for backward compatibility.
   //}
-=======
-  function bindPasswordToggle() {
-    // No-op: passwords are always enabled; kept for backward compatibility.
-  }
->>>>>>> theirs
-=======
-  function bindPasswordToggle() {
-    // No-op: passwords are always enabled; kept for backward compatibility.
-  }
->>>>>>> theirs
-=======
-  function bindPasswordToggle() {
-    // No-op: passwords are always enabled; kept for backward compatibility.
-  }
->>>>>>> theirs
 
   async function hydratePasswordPage() {
     const form = document.getElementById('change-password-form');
@@ -465,19 +391,7 @@
       const display = document.getElementById('edit-username-display');
       if (display) display.textContent = data.username || '';
       document.getElementById('edit-role').value = (data.role || data.user_role || 'kitchen');
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
       //disablePasswordFields();
-=======
-      disablePasswordFields();
->>>>>>> theirs
-=======
-      disablePasswordFields();
->>>>>>> theirs
-=======
-      disablePasswordFields();
->>>>>>> theirs
     } catch (error) {
       alert(error.message);
     }
@@ -515,26 +429,7 @@
     bindTableActions();
     bindDeleteModal();
     bindConfirmEditButton();
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
     //bindPasswordToggle();
     loadUserList();
   });
 })();
-=======
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-    bindPasswordToggle();
-    loadUserList();
-  });
-})();
-<<<<<<< ours
-<<<<<<< ours
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs

@@ -21,19 +21,7 @@ final class Hardware
     /** Reader availability snapshot (TA200) via connectivity check only. */
     public static function readerStatus(): array
     {
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-        $host = getenv('READER_HOST') ?: '192.168.1.30';
-=======
         $host = getenv('READER_HOST') ?: '192.168.1.201';
->>>>>>> theirs
-=======
-        $host = getenv('READER_HOST') ?: '192.168.1.201';
->>>>>>> theirs
-=======
-        $host = getenv('READER_HOST') ?: '192.168.1.201';
->>>>>>> theirs
         $port = (int) (getenv('READER_PORT') ?: 4370);
         $ok = self::checkSocket($host, $port, 1.5);
         return [
@@ -119,16 +107,4 @@ final class Hardware
     {
         return dirname(__DIR__, 1) . '/../storage/cardlog_cursor.json';
     }
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

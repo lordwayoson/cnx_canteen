@@ -5,19 +5,7 @@ INSERT INTO admin_user (username, password_hash, role) VALUES
 ('kitchen', '$2y$12$ZQUAYZv5q8jS02U9zX.QfefNcnJo64O1FTqmsnUnFyE9HY50xeZkq', 'kitchen')
 ON DUPLICATE KEY UPDATE password_hash = VALUES(password_hash), role = VALUES(role);
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-INSERT INTO user (userid, username, name, lastname, email, group_id, cardnumber)
-=======
 INSERT INTO user (userid, username, name, lastname, email, project, cardnumber)
->>>>>>> theirs
-=======
-INSERT INTO user (userid, username, name, lastname, email, project, cardnumber)
->>>>>>> theirs
-=======
-INSERT INTO user (userid, username, name, lastname, email, project, cardnumber)
->>>>>>> theirs
 VALUES
 (1001, 'jdoe', 'John', 'Doe', 'john.doe@example.com', 'Project Alpha', 'RFID1001'),
 (1002, 'aadu', 'Ama', 'Adu', 'ama.adu@example.com', 'Project Beta', 'RFID1002')
@@ -26,19 +14,7 @@ ON DUPLICATE KEY UPDATE
     name = VALUES(name),
     lastname = VALUES(lastname),
     email = VALUES(email),
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-    group_id = VALUES(group_id),
-=======
     project = VALUES(project),
->>>>>>> theirs
-=======
-    project = VALUES(project),
->>>>>>> theirs
-=======
-    project = VALUES(project),
->>>>>>> theirs
     cardnumber = VALUES(cardnumber);
 
 INSERT INTO meal_selection (staff_id, project, shift_type, mon, tue, wed, thu, fri, sat, sun, diet_notes, sheet_row_id, week_start_date)
@@ -56,16 +32,4 @@ ON DUPLICATE KEY UPDATE
     sat = VALUES(sat),
     sun = VALUES(sun),
     diet_notes = VALUES(diet_notes),
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
     week_start_date = VALUES(week_start_date);
-=======
-    week_start_date = VALUES(week_start_date);
->>>>>>> theirs
-=======
-    week_start_date = VALUES(week_start_date);
->>>>>>> theirs
-=======
-    week_start_date = VALUES(week_start_date);
->>>>>>> theirs

@@ -27,16 +27,4 @@ try {
         'success' => false,
         'error' => 'Unable to load users: ' . $e->getMessage(),
     ], 500);
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

@@ -4,9 +4,6 @@ body {
   padding-bottom: 90px;
 }
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 
   /* Fallback styling if the CDN CSS fails to load */
 .bottom-fixed-image {
@@ -19,12 +16,6 @@ body {
   display: flex;
 }
 
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
 .login-page {
   min-height: 100vh;
   display: flex;
@@ -42,9 +33,6 @@ body {
   backdrop-filter: blur(2px);
   background-color: rgba(255, 255, 255, 0.9);
 }
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 
 @media print {
         .no-print, #pdf-link, #report-filter, #served-chart-card, #selected-chart-card {
@@ -52,12 +40,6 @@ body {
         }
       }
 
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
 .sidebar-layout {
   display: flex;
   min-height: 100vh;
@@ -94,16 +76,4 @@ body {
 }
 .status-bar .badge {
   font-size: 0.95rem;
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

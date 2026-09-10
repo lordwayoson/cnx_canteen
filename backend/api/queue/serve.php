@@ -94,16 +94,4 @@ function attemptPrintTicket(string $ticketHtml): bool
 {
     $plainText = trim(strip_tags($ticketHtml));
     return Receipt::printTicket($plainText);
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

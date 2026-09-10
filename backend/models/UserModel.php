@@ -177,16 +177,4 @@ final class UserModel
         $stmt = $this->pdo->query('SELECT * FROM user ORDER BY lastname, name');
         return $stmt->fetchAll();
     }
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

@@ -1,0 +1,34 @@
+@page {
+  size: A4 portrait;
+  margin: 14mm 12mm 20mm;
+  @bottom-left {
+    white-space: pre;
+    font: 7pt Arial, sans-serif;
+    line-height: 4mm;
+    color: #53616b;
+    vertical-align: bottom;
+    padding-bottom: 6mm;
+  }
+  @bottom-right {
+    content: "Page " counter(page) " of " counter(pages);
+    font: 7pt Arial, sans-serif;
+    color: #53616b;
+    vertical-align: bottom;
+    padding-bottom: 6mm;
+  }
+}
+@media print {
+  html, body { background: white !important; color: #111 !important; margin: 0; font-size: 10pt; }
+  .no-print, .print-toolbar, nav, aside, .sidebar, .navbar { display: none !important; }
+  .report-document { width: 100%; margin: 0; padding: 0; box-shadow: none; border: 0; }
+  .report-scroll { overflow: visible; }
+  .report-paper { position: static; width: auto; margin: 0; }
+  .print-page-footer { display: none; }
+  thead { display: table-header-group; }
+  tfoot { display: table-footer-group; }
+  tr { break-inside: avoid; page-break-inside: avoid; }
+  h1, h2 { break-after: avoid; page-break-after: avoid; }
+  .metadata, .kpis { break-inside: avoid; }
+  a::after { content: none !important; }
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}

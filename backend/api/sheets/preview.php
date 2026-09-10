@@ -37,20 +37,12 @@ if ($data === null) {
 }
 
 if (isset($data['error'])) {
-    Response::json(['error' => 'Preview failed', 'details' => $data['error']], 500);
+    $isSetupError = !empty($data['setupError']);
+    Response::json([
+        'error' => $isSetupError ? 'Google Sheets is not configured yet' : 'Preview failed',
+        'details' => $data['error'],
+    ], $isSetupError ? 503 : 500);
     exit;
 }
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 Response::json(['rows' => $data]);
-=======
-Response::json(['rows' => $data]);
->>>>>>> theirs
-=======
-Response::json(['rows' => $data]);
->>>>>>> theirs
-=======
-Response::json(['rows' => $data]);
->>>>>>> theirs

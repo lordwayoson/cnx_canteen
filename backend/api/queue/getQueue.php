@@ -24,34 +24,13 @@ Auth::requireLogin(['admin', 'kitchen']);
 
 try {
     $tz = new DateTimeZone(getenv('TZ') ?: 'Africa/Accra');
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
     $serialFilter = getenv('READER_SERIAL') ?: '3212275';
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
     $canteenPdo = Config\getCanteenPdo();
     $queueModel = new QueueModel($canteenPdo);
     $userModel = new UserModel($canteenPdo);
     $mealModel = new MealSelectionModel($canteenPdo);
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
     // Ingest new ingress.auditdata rows on each poll so the queue is sourced from live reader events.
-=======
-    // Ingest new ingress.badging rows on each poll so the queue is sourced from live reader events.
->>>>>>> theirs
-=======
-    // Ingest new ingress.badging rows on each poll so the queue is sourced from live reader events.
->>>>>>> theirs
-=======
-    // Ingest new ingress.badging rows on each poll so the queue is sourced from live reader events.
->>>>>>> theirs
     // If ingress is unreachable or an event fails to parse, we still want to return the current queue
     // instead of failing the entire request.
     $ingestWarning = null;
@@ -70,16 +49,7 @@ try {
                 $userModel,
                 $mealModel,
                 $queueModel,
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
                 //$serialFilter,
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
                 $tz
             );
         } catch (\Throwable $ingestError) {
@@ -104,16 +74,4 @@ try {
     Response::json($payload);
 } catch (\Throwable $throwable) {
     Response::json(['error' => 'Queue load failed', 'detail' => $throwable->getMessage()], 500);
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

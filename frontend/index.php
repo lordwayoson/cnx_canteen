@@ -5,6 +5,7 @@ use Canteen\Config;
 use Canteen\Lib\Auth;
 use Canteen\Models\UserModel;
 
+require_once __DIR__ . '/../config/app.php';
 require_once __DIR__ . '/../backend/config/db.php';
 require_once __DIR__ . '/../backend/lib/auth.php';
 require_once __DIR__ . '/../backend/models/UserModel.php';
@@ -25,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'username' => $user['username'],
                 'role' => $user['role'],
             ]);
-            header('Location: dashboard.php');
+            header('Location: ' . Config\frontendUrl('dashboard.php'));
             exit;
         }
         $error = 'Invalid credentials provided.';
@@ -33,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if (Auth::user()) {
-    header('Location: dashboard.php');
+    header('Location: ' . Config\frontendUrl('dashboard.php'));
     exit;
 }
 ?>
@@ -43,8 +44,9 @@ if (Auth::user()) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Concentrix Canteen Login</title>
+  <link rel="icon" type="image/png" href="<?php echo Config\h(Config\assetUrl('img/TabIcon.png')); ?>">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="<?php echo Config\h(Config\assetUrl('assets/css/custom.css')); ?>">
 </head>
 <body class="login-page">
   <div class="card shadow-lg login-card">
@@ -67,16 +69,4 @@ if (Auth::user()) {
     </div>
   </div>
 </body>
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 </html>
-=======
-</html>
->>>>>>> theirs
-=======
-</html>
->>>>>>> theirs
-=======
-</html>
->>>>>>> theirs

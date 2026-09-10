@@ -42,16 +42,4 @@ try {
     Response::json(['success' => true, 'message' => 'User deleted']);
 } catch (Throwable $e) {
     Response::json(['success' => false, 'error' => 'Unable to delete user'], 500);
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

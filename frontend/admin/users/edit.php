@@ -2,11 +2,12 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/../../partials/auth.php';
+require_once __DIR__ . '/../../../config/app.php';
 require_once __DIR__ . '/../../../backend/lib/auth.php';
 
 $user = \Canteen\Lib\Auth::user();
 if (($user['role'] ?? '') !== 'admin') {
-    header('Location: /canteen-system/frontend/dashboard.php');
+    header('Location: ' . \Canteen\Config\frontendUrl('dashboard.php'));
     exit;
 }
 
@@ -23,7 +24,7 @@ if ($userId <= 0) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit User</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/custom.css">
+  <link rel="stylesheet" href="<?php echo \Canteen\Config\h(\Canteen\Config\assetUrl('assets/css/custom.css')); ?>">
 </head>
 <body>
 <?php require __DIR__ . '/../../partials/navbar.php'; ?>
@@ -71,16 +72,4 @@ if ($userId <= 0) {
 </div>
 <?php require __DIR__ . '/../../partials/scripts.php'; ?>
 </body>
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 </html>
-=======
-</html>
->>>>>>> theirs
-=======
-</html>
->>>>>>> theirs
-=======
-</html>
->>>>>>> theirs

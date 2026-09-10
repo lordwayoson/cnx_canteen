@@ -4,12 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const importButton = document.getElementById('import-btn');
   const previewTableBody = document.querySelector('#preview-table tbody');
 
+  function apiUrl(path) {
+    const base = window.CANTEEN_BACKEND_API_URL || window.CANTEEN_BACKEND_API_BASE || '../backend/api';
+    return `${String(base).replace(/\/$/, '')}/${String(path).replace(/^\//, '')}`;
+  }
+
   if (ingressButton) {
     ingressButton.addEventListener('click', async () => {
       ingressButton.disabled = true;
       ingressButton.innerText = 'Syncing...';
       try {
-        const response = await fetch('../backend/api/ingress/importUsers.php', {
+        const response = await fetch(apiUrl('ingress/importUsers.php'), {
           method: 'POST',
           credentials: 'include'
         });
@@ -35,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       previewButton.disabled = true;
       previewButton.innerText = 'Loading...';
       try {
-        const response = await fetch('../backend/api/sheets/preview.php', {
+        const response = await fetch(apiUrl('sheets/preview.php'), {
           credentials: 'include'
         });
         const payload = await parseJsonResponse(response);
@@ -61,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
       importButton.disabled = true;
       importButton.innerText = 'Importing...';
       try {
-        const response = await fetch('../backend/api/sheets/import.php', {
+        const response = await fetch(apiUrl('sheets/import.php'), {
           method: 'POST',
           credentials: 'include'
         });
@@ -143,16 +148,4 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 });
-=======
-});
->>>>>>> theirs
-=======
-});
->>>>>>> theirs
-=======
-});
->>>>>>> theirs

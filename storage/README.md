@@ -1,17 +1,13 @@
-# Service Account Storage
+# Local Storage
 
-Place your Google service account JSON file in this directory. The default `.env` value expects the file to be named `storage/service-account.json` relative to the repository root. The Node importer also accepts absolute paths or inline JSON via the `GOOGLE_SERVICE_JSON` environment variable.
+This directory is for local runtime files that must not be committed.
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-> **Security tip:** never commit real credentials to version control. Add this file to your deployment target manually.
-=======
-> **Security tip:** never commit real credentials to version control. Add this file to your deployment target manually.
->>>>>>> theirs
-=======
-> **Security tip:** never commit real credentials to version control. Add this file to your deployment target manually.
->>>>>>> theirs
-=======
-> **Security tip:** never commit real credentials to version control. Add this file to your deployment target manually.
->>>>>>> theirs
+For Google Sheets integration:
+
+1. In Google Cloud Console, disable/delete any leaked service account key first.
+2. Create a new service account key only if the app still needs one.
+3. Save the downloaded key locally as `storage/google-service-account.json`.
+4. Set `GOOGLE_APPLICATION_CREDENTIALS=storage/google-service-account.json` in `.env`.
+5. Share the target Google Sheet with the service account email.
+
+Never commit Google credential JSON files. The repository ignores `storage/*.json`.

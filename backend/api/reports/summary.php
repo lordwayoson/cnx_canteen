@@ -1,54 +1,29 @@
 <?php
 declare(strict_types=1);
-
+ini_set('display_errors', '0');
 use Canteen\Config;
 use Canteen\Lib\Auth;
 use Canteen\Lib\Cors;
 use Canteen\Lib\Response;
-use Canteen\Models\MealSelectionModel;
-
-require_once __DIR__ . '/../../config/db.php';
+use Canteen\Reports\ReportDataService;
+use Canteen\Reports\ReportFormatter;
+use Canteen\Reports\ReportContext;
 require_once __DIR__ . '/../../lib/cors.php';
 require_once __DIR__ . '/../../lib/response.php';
 require_once __DIR__ . '/../../lib/auth.php';
-require_once __DIR__ . '/../../models/MealSelectionModel.php';
-
+require_once __DIR__ . '/../../reports/ReportFormatter.php';
+require_once __DIR__ . '/../../reports/ReportContext.php';
 Cors::apply();
-Auth::requireLogin(['admin']);
-
-$filters = [
-    'start_date' => isset($_GET['start_date']) ? $_GET['start_date'] : null,
-    'end_date' => isset($_GET['end_date']) ? $_GET['end_date'] : null,
-    'shift_type' => isset($_GET['shift_type']) && in_array($_GET['shift_type'], ['Day', 'Night'], true) ? $_GET['shift_type'] : null,
-];
-
-$reportType = isset($_GET['report_type'])
-    ? strtolower(trim((string) $_GET['report_type']))
-    : null;
-if ($reportType !== null && !in_array($reportType, ['meals_served', 'selected_meals', 'daily_totals', 'top_meals'], true)) {
-    $reportType = null;
-}
-
+$user = Auth::requireLogin(['admin']);
+header('Cache-Control: no-store, private');
 try {
-    $canteenPdo = Config\getCanteenPdo();
-    $mealModel = new MealSelectionModel($canteenPdo);
-    $data = $mealModel->getSummary($filters, $reportType);
-    Response::json(['filters' => $filters, 'report_type' => $reportType, 'data' => $data]);
+    $filters = ReportDataService::validate($_GET);
+    require_once __DIR__ . '/../../config/db.php';
+    $data = ReportDataService::fetch(Config\getCanteenPdo(), $filters);
+    $context = ReportContext::save(ReportFormatter::build($data, $filters, $user));
+    session_write_close();
+    Response::json(['filters' => $filters, 'report_type' => $filters['report_type'] ?: null, 'data' => $data, 'context' => $context]);
 } catch (\Throwable $exception) {
-    Response::json([
-        'error' => 'Unable to load report summary',
-        'detail' => $exception->getMessage(),
-    ], 500);
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
+    error_log('Report summary: ' . $exception->getMessage());
+    Response::json(['error' => $exception instanceof \InvalidArgumentException ? $exception->getMessage() : 'Unable to load report summary. Please try again.'], $exception instanceof \InvalidArgumentException ? 422 : 500);
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

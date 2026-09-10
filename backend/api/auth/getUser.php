@@ -35,16 +35,4 @@ try {
     Response::json(['success' => true, 'data' => $user]);
 } catch (Throwable $e) {
     Response::json(['success' => false, 'error' => 'Unable to load user'], 500);
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs

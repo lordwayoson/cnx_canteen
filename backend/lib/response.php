@@ -11,16 +11,4 @@ final class Response
         header('Content-Type: application/json');
         echo json_encode($data, JSON_UNESCAPED_UNICODE);
     }
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 }
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
-=======
-}
->>>>>>> theirs
